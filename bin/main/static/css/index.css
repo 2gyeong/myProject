@@ -1,0 +1,267 @@
+* {margin: 0; padding: 0;}
+a {text-decoration-line: none;
+    color: #222222;}
+a:visited{color: #222222;}
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+ul, li, ol {list-style-type: none; }
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+ul, li, ol {list-style-type: none; }
+body{
+    padding-top: 230px; 
+    font-family:'Pretendard-Regular';
+    font-size: 13px;
+    color: #222222;
+    text-align: center;
+}
+
+header {
+    top:0;
+    width: 100% ; 
+    margin: 0 auto;
+    background-color: white;
+    position: fixed;
+    z-index: 2;
+}
+
+
+.clear{clear: both;}
+
+#section1 {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.slide-box {
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2%;
+    align-items: center;
+    overflow: hidden;
+}
+
+.slide-box img {
+    max-width: 80%; height: auto;
+    border-radius: 2%;
+    margin: 2% 0 4% 0;
+
+}
+
+#section2 {
+  width: 100%;
+  background-color: #ebecec;
+  display: flex;
+  justify-content: center;
+}
+
+#best_item {
+    width: 90%; 
+    background-color: #ebecec;
+}
+#best_item .title {
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 30px 0 20px 20px ;
+    text-align: left;
+}
+.product {
+    display: flex;
+    justify-content: space-around;
+    color: black;
+    margin-bottom: 2%;
+}
+.img_box{
+  overflow: hidden;
+  transform:scale(1.0);        /* 마우스 over 시 자연스럽게 돌아오기*/
+  transition: transform .5s; 
+
+}
+
+#best_item {
+    width: 80%;
+    padding: 2%;
+}
+#best_item ul {
+    width: 18%;
+    display: inline-block;
+}
+#best_item li{
+  font-size: 11pt; 
+  font-weight: bold;
+  text-align: left;
+  float: none;
+  margin-bottom: 5%;
+  word-break: break-all;
+
+  display: flex;
+  align-items: center;
+}
+
+.img_box img {
+    width: 100%;
+}
+.img_box img:hover {
+  transform:scale(1.2); 
+  transition: transform .1s;
+}
+
+.product_title:hover {
+  color: rgb(0, 153, 255); 
+}
+.product_price {
+  margin-top: 5px;
+}
+.product_price:hover {
+  color: rgb(0, 153, 255); 
+}
+
+
+#section3 {
+    width: 80%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 10% 2% 10%;
+}
+
+#banner{
+    width: 100%;
+    max-width: 500px;
+    min-width: 240px;
+    margin: 5%;
+}
+#banner img {
+    width: 100%;
+    margin-top: 2%;
+}
+#youtube {
+    width: 100%;
+    height: 100% auto;
+    padding: 0 3% 2% 3%;
+    background-color: #ebecec;
+    margin: 0 10% 0 0;
+    display: block;
+    border: 0.3px solid #5555550e;
+    border-radius: 2%;
+}
+
+#youtube .title{
+    color: black;
+    font-size: 15pt;
+    font-weight: bold;
+    text-align: left;
+    padding: 30px 0 20px 30px ;
+}
+
+iframe {
+    width: 30vw;
+    min-width: 250px;
+    max-height: 300px;
+    height: 30vw ;
+    min-height: 150px;
+    margin: 2%;
+}
+
+/* 슬라이드 자동변경, 캐러샐, 인디케이터 */
+
+#visual {
+    z-index: 1;
+    width: 35%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1.3%;
+  }
+
+  #visual>div {
+    position: absolute; /* 설정 중요 */
+    width: 16.5%;
+    height: auto;
+    transition: 0.3s ease;
+    opacity: 0;
+    border-radius: 1em;
+    overflow: hidden;
+  }
+
+  #visual>div.on{
+    opacity: 1;
+  }
+  #s1_bt {
+    position: absolute;
+    margin-top: 32.5%;
+    left: 67.4%;
+    width: 16.3%;
+  }
+  #control { 
+    width: 100%;
+    text-align: center;
+  }
+
+  #control a {
+    display: inline-flex;
+    justify-content: space-around;
+
+    width: 1vw;
+    max-width:10px;
+    height: 1vw;
+    max-height: 10px;
+
+    background: #f6f5f5;                       
+    border: 1px solid rgb(184, 181, 181);
+    border-radius: 1em;
+    margin: 0 2% 0 2%;
+  }
+  
+  #control a.on {
+    background: #9ab3f5;
+  }
+  #left > i { 
+    display: inline-flex;
+    justify-content: center;
+    color: rgb(175, 175, 175);
+    }
+
+   #right > i {
+    display: inline-flex;
+    justify-content: center;
+    color: rgb(175, 175, 175);
+    }
+  
+  div#left{
+    display: inline-flex;
+    justify-content: center;
+    width: 10%;
+    height: 20%;
+    font-size: 100%;
+    cursor: pointer;
+    transition: .4s ease;
+  }
+  
+  div#right{
+    display: inline-flex;
+    justify-content: center;
+    width: 10%;
+    height: 10%;
+    font-size: 100%;;
+    cursor: pointer;
+    transition: .4s ease;
+  }
+  div#left i:hover{
+    color: rgb(107, 171, 255);
+    transition: 0.2s ease;
+  }
+  div#right i:hover{
+    color: rgb(107, 171, 255);
+    transition: 0.2s ease;
+  }

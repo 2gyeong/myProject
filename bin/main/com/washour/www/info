@@ -1,0 +1,8 @@
+
+oracle
+
+create user C##WASHOUR identified by 1234 ;
+
+grant connect, resource to C##WASHOUR;
+
+alter user C##WASHOUR quota unlimited on USERS;
