@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
+ <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+</head>
+
+	<th:block th:replace="fragments/config :: configFragment"></th:block>
+
+
+<body>
+	<th:block th:replace="fragments/header :: headerFragment"></th:block>
+
+	
+	<div layout:fragment="content"></div>
+	
+
+	<th:block th:replace="fragments/footer :: footerFragment"></th:block>
+<!--  삭제 자바스크립트 -->
+<script layout:fragment="script" type='text/javascript'>
+
+	// 삭제 자바스크립트
+	const delete_elements = document.getElementsByClassName("delete");
+	Array.from(delete_elements).forEach(function(element) {
+		element.addEventListener('click', function() {
+			if (confirm("정말로 삭제하시겠습니까?")) {
+				location.href = this.dataset.uri;
+			}
+			;
+		});
+	});
+	// 추천 자바스크립트
+
+	const recommend_elements = document.getElementsByClassName("recommend");
+	Array.from(recommend_elements).forEach(function(element) {
+		element.addEventListener('click', function() {
+			if (confirm("정말로 추천하시겠습니까?")) {
+				location.href = this.dataset.uri;
+			}
+			;
+		});
+	});
+</script>
+	</body>
+
+</html>

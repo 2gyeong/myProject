@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko" xmlnTemplateInputExceptions:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<header th:fragment="headerFragment">
+
+        <div class ="topmenu">
+            
+            <div class="welcome" sec:authorize="isAuthenticated()" ><span class="name"  sec:authentication="name"></span>님 환영합니다!</div>
+            <ul>
+                <li>
+                	<a sec:authorize="isAnonymous()" th:href="@{member/login}" >로그인</a>
+                 	<a sec:authorize="isAuthenticated()" th:href="@{/member/logout}" >로그아웃 </a>
+                </li>
+                <li>|</li>
+                <li>
+                <a sec:authorize="isAnonymous()" th:href="@{/member/sign_up}">회원가입</a>
+                <a sec:authorize="isAuthenticated()"  th:href="@{/member/myinfo}" > 내정보 </a>
+                </li>
+                <li>|</li>
+                <li>장바구니</li>
+            </ul>
+
+
+
+        </div>
+        <div class="clear"></div>
+        <div id ="logo">
+            <a th:href="@{/}"><img src="/img/logo.PNG"></img></a>
+        </div>
+        <div class="clear"></div>
+        <nav class ="menu">
+            <ul class = "menu main">
+                <li> <a href="#">카테고리</a>
+                    <div class ="submenu"> 
+                    <ul>
+                        <li><a th:href="@{/category_1}"><img src="/img/main_menu01.png"></img><br>외장관리</a></li>
+                        <li><a th:href="@{/category_2}"><img src="/img/main_menu03.png"></img><br>세차도구</a></li>
+                        <li><a th:href="@{/category_3}"><img src="/img/main_menu02.png"></img><br>실내관리</a></li>
+                        <li><a th:href="@{/category_4}"><img src="/img/main_menu04.png"></img><br>광택/전문가용</a></li>
+                        <li><a th:href="@{/category_5}"><img src="/img/main_menu05.png"></img><br>공구류</a></li>
+                        <li><a th:href="@{/category_6}"><img src="/img/main_menu06.png"></img><br>자동차용품</a></li>
+                        <li><a th:href="@{/category_7}"><img src="/img/main_menu07.png"></img><br>기타</a></li>
+                    </ul>
+                </div>
+                </li>
+                <li>이벤트</li>
+                <li>공지사항</li>
+                <li><a th:href="@{/question/list}">고객센터</a></li>
+
+            </ul>
+            
+
+        </nav>
+</header>
+</html>
+
+        

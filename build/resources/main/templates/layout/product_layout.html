@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+
+     <script defer src="./js/includ.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/product.css">
+ <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+</head>
+
+	<th:block th:replace="fragments/config :: configFragment"></th:block>
+
+
+<body>
+	<th:block th:replace="fragments/header :: headerFragment"></th:block>
+
+	
+	<div layout:fragment="content"></div>
+	
+
+	<th:block th:replace="fragments/footer :: footerFragment"></th:block>
+
+
+<script layout:fragment="script" type='text/javascript'>
+
+function count(type)  {
+    // 결과를 표시할 element
+    const resultElement = document.getElementById('c_result');
+
+    // 현재 화면에 표시된 값
+    let number = resultElement.innerText;
+  
+    // 더하기/빼기
+    if(type === 'plus') {
+      number = parseInt(number) + 1;
+      
+    }else if(type === 'minus')  {
+      number = parseInt(number) - 1;
+      
+      if(number <= 0 ){
+        number = 1;
+      }
+    }
+
+    // 수량 개수 출력
+    resultElement.innerText = number;
+
+    // 총 금액 출력
+    const price = document.getElementById('price').innerText;
+    let totalcost = number * price ;
+    document.getElementById('total');
+    total.textContent = totalcost.toLocaleString('ko-KR');
+  }
+
+
+</script>
+	</body>
+
+</html>

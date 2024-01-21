@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout2}">
+<head>
+
+
+<div layout:fragment="content">
+<div class="container my-3">
+	<h1 class="border-bottom py-2" th:text = "${member.username}">이름</h1>
+
+<table>
+
+      
+            <tr><td>이메일</td><td th:text="${member.email}"></td></tr>
+            <tr><td>주소</td><td th:text="${member.address}"></td></tr>
+       
+</table>
+</div>
+</div>
+
+</html>
